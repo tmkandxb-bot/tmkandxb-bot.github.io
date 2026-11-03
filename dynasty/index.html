@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynasty Chinese Cuisine — Hanford, CA | Chinese Restaurant &amp; Takeout</title>
+<meta name="description" content="Dynasty Chinese Cuisine in Hanford, CA. Rated 4.9 stars from 42 Google reviews. Salt & Pepper Shrimp, Orange Chicken, generous portions. Dine-in & takeout. Call (559) 582-2286.">
+<style>
+  :root{
+    --red:#9e2b25;
+    --red-dark:#7c1d18;
+    --gold:#c9a227;
+    --gold-soft:#f3e3bb;
+    --cream:#fff9f0;
+    --paper:#fffdf8;
+    --ink:#2b2118;
+    --muted:#6f6154;
+    --line:#ecdcc3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:76px;
+  }
+  a{text-decoration:none;}
+
+  /* ---------- Preview banner (sample mockup) ---------- */
+  .preview-bar{
+    background:var(--ink);
+    color:#f5e9d2;
+    text-align:center;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:.45rem 1rem;
+  }
+  .preview-bar strong{color:var(--gold);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(160deg,var(--red-dark) 0%,var(--red) 55%,#b03a2e 100%);
+    color:#fff;
+    text-align:center;
+    padding:3rem 1.25rem 2.6rem;
+  }
+  .hero::after{
+    content:"PREVIEW · SAMPLE · PREVIEW · SAMPLE · PREVIEW";
+    position:absolute;
+    inset:auto -10% 8px -10%;
+    font-size:.72rem;
+    letter-spacing:.35em;
+    color:rgba(255,255,255,.14);
+    white-space:nowrap;
+    pointer-events:none;
+  }
+  .hero .lanterns{font-size:1.5rem;letter-spacing:.6em;margin-bottom:.9rem;}
+  .hero .kicker{
+    font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);
+    margin-bottom:.6rem;
+  }
+  .hero h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:2.35rem;line-height:1.15;font-weight:700;
+  }
+  .hero h1 .zh{display:block;font-size:1.05rem;letter-spacing:.55em;color:var(--gold-soft);margin-top:.5rem;font-family:inherit;}
+  .hero .tagline{
+    margin:1rem auto 0;max-width:30rem;font-size:1.02rem;color:#ffeedd;
+  }
+  .rating-chip{
+    display:inline-flex;align-items:center;gap:.45rem;
+    background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.35);
+    border-radius:999px;padding:.38rem .95rem;margin-top:1.15rem;
+    font-size:.92rem;font-weight:600;
+  }
+  .rating-chip .stars{color:var(--gold);letter-spacing:.08em;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:1.5rem;}
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    border-radius:999px;padding:.85rem 1.6rem;font-weight:700;font-size:1rem;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-call{background:var(--gold);color:#3a2a05;box-shadow:0 6px 18px rgba(0,0,0,.25);}
+  .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.75);}
+  .hero .addr{margin-top:1.3rem;font-size:.9rem;color:#ffd9c9;}
+
+  /* ---------- Highlights strip ---------- */
+  .strip{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.4rem;
+    background:var(--gold-soft);
+    padding:.7rem 1rem;font-size:.9rem;font-weight:600;color:#5c430a;
+    border-bottom:1px solid var(--line);
+  }
+
+  /* ---------- Sections ---------- */
+  .wrap{max-width:960px;margin:0 auto;padding:0 1.15rem;}
+  section{padding:2.6rem 0 .4rem;}
+  h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:1.65rem;text-align:center;color:var(--red-dark);
+  }
+  .h2-sub{text-align:center;color:var(--muted);font-size:.95rem;margin:.4rem auto 1.6rem;max-width:32rem;}
+
+  /* ---------- Dish grid ---------- */
+  .grid{display:grid;grid-template-columns:1fr;gap:1rem;}
+  @media(min-width:620px){.grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:900px){.grid{grid-template-columns:1fr 1fr 1fr;}}
+  .dish{
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:1.25rem 1.2rem 1.1rem;box-shadow:0 2px 8px rgba(124,29,24,.05);
+  }
+  .dish .emoji{
+    width:52px;height:52px;border-radius:50%;
+    background:linear-gradient(145deg,#fbeed3,#f3e3bb);
+    display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:.7rem;
+  }
+  .dish h3{font-size:1.08rem;color:var(--ink);}
+  .dish p{font-size:.92rem;color:var(--muted);margin-top:.3rem;}
+  .tag{
+    display:inline-block;margin-top:.6rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--red);background:#fbe9e4;border-radius:999px;padding:.22rem .6rem;
+  }
+
+  /* ---------- Trust block ---------- */
+  .trust{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:1.8rem 1.3rem;text-align:center;margin-top:1rem;
+    box-shadow:0 2px 10px rgba(124,29,24,.05);
+  }
+  .trust .big{font-family:Georgia,serif;font-size:2.6rem;color:var(--red-dark);line-height:1;}
+  .trust .big .stars{color:var(--gold);font-size:1.7rem;vertical-align:.35rem;letter-spacing:.1em;}
+  .trust .fact{font-weight:600;margin-top:.35rem;}
+  .trust-points{
+    display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.4rem;text-align:left;
+  }
+  @media(min-width:700px){.trust-points{grid-template-columns:repeat(4,1fr);}}
+  .trust-points div{background:var(--cream);border-radius:10px;padding:.8rem .85rem;font-size:.9rem;}
+  .trust-points b{display:block;font-size:1.05rem;margin-bottom:.15rem;}
+  .trust-points span{color:var(--muted);font-size:.83rem;}
+
+  /* ---------- Info / hours ---------- */
+  .info{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem;}
+  @media(min-width:760px){.info{grid-template-columns:1fr 1fr;}}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.3rem;
+    box-shadow:0 2px 8px rgba(124,29,24,.05);
+  }
+  .card h3{font-family:Georgia,serif;color:var(--red-dark);font-size:1.2rem;margin-bottom:.9rem;}
+  table.hours{width:100%;border-collapse:collapse;font-size:.95rem;}
+  table.hours td{padding:.34rem 0;border-bottom:1px dashed var(--line);}
+  table.hours tr:last-child td{border-bottom:none;}
+  table.hours td:last-child{text-align:right;font-weight:600;}
+  table.hours .closed{color:var(--red);font-weight:700;}
+  .addr-big{font-size:1.05rem;font-weight:700;line-height:1.45;}
+  .card p{color:var(--muted);font-size:.93rem;margin-top:.35rem;}
+  .card .btn{margin-top:1rem;width:100%;justify-content:center;}
+  .btn-red{background:var(--red);color:#fff;}
+  .btn-outline{border:2px solid var(--red);color:var(--red);background:transparent;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:3rem;background:var(--red-dark);color:#f3d9c8;text-align:center;
+    padding:2rem 1.25rem 2.4rem;font-size:.9rem;
+  }
+  footer .fname{font-family:Georgia,serif;font-size:1.2rem;color:#fff;margin-bottom:.4rem;}
+  footer a{color:var(--gold-soft);font-weight:700;}
+  footer .fineprint{margin-top:1.1rem;font-size:.75rem;color:#d9a58d;letter-spacing:.05em;}
+
+  /* ---------- Sticky call bar ---------- */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:20;
+    background:rgba(43,33,24,.97);padding:.6rem .8rem;
+    display:flex;gap:.6rem;
+  }
+  .callbar a{
+    flex:1;text-align:center;border-radius:10px;padding:.8rem .4rem;font-weight:700;font-size:.98rem;
+  }
+  .callbar .c1{background:var(--gold);color:#3a2a05;}
+  .callbar .c2{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6);flex:0 0 42%;}
+  @media(min-width:760px){.callbar{display:none;} body{padding-bottom:0;}}
+</style>
+<style>html,body{overflow-x:hidden}.btn{max-width:94vw;box-sizing:border-box}@media (max-width:480px){.btn{padding-left:18px;padding-right:18px;font-size:16px}}</style>
+</head>
+<body>
+
+<div class="preview-bar">Sample Preview — complimentary mockup, not the official website</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="lanterns">🏮 🏮 🏮</div>
+  <div class="kicker">Hanford, California</div>
+  <h1>Dynasty Chinese Cuisine<span class="zh">中 餐 馆</span></h1>
+  <p class="tagline">The Chinese kitchen Hanford keeps coming back to — wok-fired favorites, generous portions, and dinner on the table fast.</p>
+  <div class="rating-chip"><span class="stars">★★★★★</span> 4.9 · 42 Google reviews</div>
+  <div class="hero-ctas">
+    <a class="btn btn-call" href="tel:+15595822286">📞 Call to Order</a>
+    <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Dynasty+Chinese+Cuisine+441+N+10th+Ave+Hanford+CA+93230" target="_blank" rel="noopener">📍 Get Directions</a>
+  </div>
+  <p class="addr">441 N 10th Ave, Hanford, CA 93230 · Open Tue–Sun 11:00 AM – 8:30 PM</p>
+</header>
+
+<div class="strip">
+  <span>🍽️ Dine-In</span><span>🥡 Takeout</span><span>☀️ Lunch &amp; Dinner</span><span>👨‍👩‍👧 Family Friendly</span><span>🅿️ Parking Lot</span>
+</div>
+
+<!-- ================= SIGNATURE DISHES ================= -->
+<section class="wrap" id="menu">
+  <h2>House Favorites</h2>
+  <p class="h2-sub">The dishes regulars order again and again. Call ahead and your takeout will be hot and waiting.</p>
+  <div class="grid">
+    <div class="dish">
+      <div class="emoji">🦐</div>
+      <h3>Salt &amp; Pepper Shrimp</h3>
+      <p>Crispy shrimp tossed with salt, pepper and aromatics — the dish customers name first.</p>
+      <span class="tag">Customer Favorite</span>
+    </div>
+    <div class="dish">
+      <div class="emoji">🍊</div>
+      <h3>Orange Chicken</h3>
+      <p>Golden, crispy chicken glazed in a sweet orange sauce. A classic, done right.</p>
+      <span class="tag">Customer Favorite</span>
+    </div>
+    <div class="dish">
+      <div class="emoji">🍤</div>
+      <h3>Honey Walnut Shrimp</h3>
+      <p>Plump shrimp in a creamy honey glaze with candied walnuts.</p>
+      <span class="tag">House Favorite</span>
+    </div>
+    <div class="dish">
+      <div class="emoji">🍜</div>
+      <h3>Dynasty Chow Mein</h3>
+      <p>Our house-style noodles, wok-tossed with vegetables and your choice of protein.</p>
+      <span class="tag">Customer Favorite</span>
+    </div>
+    <div class="dish">
+      <div class="emoji">🍚</div>
+      <h3>House Special Fried Rice</h3>
+      <p>Loaded fried rice with a mix of meats and vegetables — made for sharing.</p>
+      <span class="tag">Customer Favorite</span>
+    </div>
+    <div class="dish">
+      <div class="emoji">🥟</div>
+      <h3>Pot Stickers &amp; Egg Rolls</h3>
+      <p>Hand-pleated pot stickers and crispy egg rolls — the right way to start.</p>
+      <span class="tag">Starters</span>
+    </div>
+  </div>
+  <p class="h2-sub" style="margin-top:1.4rem;">Full menu available in-store and by phone. Combo plates, soups, chow fun, cashew chicken, sesame chicken and broccoli beef, too.</p>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="wrap" id="reviews">
+  <h2>Loved by Hanford</h2>
+  <p class="h2-sub">A small dining room with a big reputation.</p>
+  <div class="trust">
+    <div class="big">4.9 <span class="stars">★★★★★</span></div>
+    <p class="fact">Rated 4.9 out of 5 from 42 Google reviews</p>
+    <div class="trust-points">
+      <div><b>🍱 Generous portions</b><span>Plates come loaded — leftovers are part of the plan</span></div>
+      <div><b>🔥 Hot &amp; fresh</b><span>Cooked to order, straight from the wok</span></div>
+      <div><b>👨‍👩‍👧 Family friendly</b><span>Clean, comfortable dining room; good for kids</span></div>
+      <div><b>🥡 Easy takeout</b><span>Call ahead — dine in or take it home</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOURS & LOCATION ================= -->
+<section class="wrap" id="visit">
+  <h2>Hours &amp; Location</h2>
+  <p class="h2-sub">Find us on N 10th Ave in Hanford — walk-ins welcome.</p>
+  <div class="info">
+    <div class="card">
+      <h3>🕚 Opening Hours</h3>
+      <table class="hours">
+        <tr><td>Monday</td><td class="closed">Closed</td></tr>
+        <tr><td>Tuesday</td><td>11:00 AM – 8:30 PM</td></tr>
+        <tr><td>Wednesday</td><td>11:00 AM – 8:30 PM</td></tr>
+        <tr><td>Thursday</td><td>11:00 AM – 8:30 PM</td></tr>
+        <tr><td>Friday</td><td>11:00 AM – 8:30 PM</td></tr>
+        <tr><td>Saturday</td><td>11:00 AM – 8:30 PM</td></tr>
+        <tr><td>Sunday</td><td>11:00 AM – 8:30 PM</td></tr>
+      </table>
+      <p style="margin-top:.8rem;">Kitchen serves lunch and dinner. Delivery: </p>
+    </div>
+    <div class="card">
+      <h3>📍 Visit Us</h3>
+      <p class="addr-big">Dynasty Chinese Cuisine<br>441 N 10th Ave<br>Hanford, CA 93230</p>
+      <p>Phone: <a href="tel:+15595822286" style="color:var(--red);font-weight:700;">(559) 582-2286</a></p>
+      <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&amp;destination=Dynasty+Chinese+Cuisine+441+N+10th+Ave+Hanford+CA+93230" target="_blank" rel="noopener">📍 Get Directions on Google Maps</a>
+      <a class="btn btn-outline" href="tel:+15595822286">📞 Call (559) 582-2286</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="fname">Dynasty Chinese Cuisine</div>
+  <div>441 N 10th Ave, Hanford, CA 93230 · <a href="tel:+15595822286">(559) 582-2286</a></div>
+  <div style="margin-top:.3rem;">Open Tue–Sun 11:00 AM – 8:30 PM · Closed Mondays</div>
+  <div class="fineprint">SAMPLE PREVIEW PAGE — prepared as a complimentary mockup for the restaurant. Hours and details shown from public listings; please call to confirm.</div>
+</footer>
+
+<!-- Sticky mobile call bar -->
+<div class="callbar">
+  <a class="c1" href="tel:+15595822286">📞 Call to Order</a>
+  <a class="c2" href="https://www.google.com/maps/dir/?api=1&amp;destination=Dynasty+Chinese+Cuisine+441+N+10th+Ave+Hanford+CA+93230" target="_blank" rel="noopener">📍 Directions</a>
+</div>
+
+</body>
+</html>
