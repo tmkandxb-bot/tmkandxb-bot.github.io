@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chopsticks — Chinese Restaurant in Edmonds, WA</title>
+<meta name="description" content="Chopsticks — Cantonese family favorites in Edmonds. Special chow mein, family dinners and luncheon specials. Rated 4.3 stars on Google. Call (425) 776-1196.">
+<style>
+  :root{
+    --red:#1f5c46; --red-dark:#14402f; --gold:#d9a441; --gold-soft:#f3d492;
+    --cream:#f4f8f2; --paper:#fdfefb; --ink:#22302a; --muted:#6d7d74;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--cream);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none}
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px}
+  .preview-bar{background:#22302a;color:#f3d492;text-align:center;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;padding:7px 10px}
+  header{background:linear-gradient(160deg,var(--red) 0%,var(--red-dark) 78%);color:#fff;
+    text-align:center;padding:52px 18px 46px;position:relative;overflow:hidden}
+  header::after{content:"🥡";position:absolute;font-size:190px;opacity:.08;right:-30px;bottom:-50px;transform:rotate(12deg)}
+  .hero-emoji{font-size:52px;line-height:1}
+  h1{font-size:42px;font-weight:800;letter-spacing:.02em;margin:10px 0 2px}
+  .hero-sub{color:var(--gold-soft);font-size:15px;letter-spacing:.28em;text-transform:uppercase}
+  .hero-pitch{font-size:18px;max-width:440px;margin:18px auto 0;color:#eaffef}
+  .stars{margin-top:14px;font-size:15px;color:#ffd873}
+  .stars b{color:#fff}
+  .btn{display:inline-block;font-weight:700;border-radius:999px;padding:15px 30px;font-size:17px;
+    transition:transform .08s ease}
+  .btn:active{transform:scale(.97)}
+  .btn-call{background:var(--gold);color:#3a2403;box-shadow:0 6px 18px rgba(0,0,0,.28);margin-top:26px}
+  .btn-ghost{border:2px solid rgba(255,255,255,.75);color:#fff;margin-top:12px;padding:12px 26px;font-size:15px}
+  .hero-btns{display:flex;flex-direction:column;align-items:center}
+  section{padding:38px 0 6px}
+  h2{font-size:24px;font-weight:800;text-align:center;color:var(--red-dark)}
+  h2 .rule{display:block;width:52px;height:3px;background:var(--gold);border-radius:2px;margin:10px auto 0}
+  .section-note{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
+  .dishes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  .dish{background:var(--paper);border:1px solid #dcead9;border-radius:14px;padding:18px 14px;text-align:center;
+    box-shadow:0 2px 8px rgba(20,64,47,.05)}
+  .dish .ico{font-size:34px}
+  .dish h3{font-size:16px;margin:8px 0 4px}
+  .dish p{font-size:13px;color:var(--muted)}
+  .tag{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;color:var(--red);
+    background:#e9f4ec;border-radius:999px;padding:3px 9px;letter-spacing:.04em}
+  .trust{background:var(--paper);border:1px solid #dcead9;border-radius:16px;margin-top:24px;
+    padding:26px 20px;text-align:center;box-shadow:0 2px 10px rgba(20,64,47,.06)}
+  .trust .big{font-size:40px;font-weight:800;color:var(--red-dark)}
+  .trust .stars-lg{font-size:22px;color:#e8a812;letter-spacing:3px}
+  .trust p{color:var(--muted);font-size:14px;margin-top:6px}
+  .info{background:var(--paper);border:1px solid #dcead9;border-radius:16px;margin-top:16px;padding:22px 20px}
+  .info h3{font-size:16px;color:var(--red-dark);margin-bottom:10px}
+  .hours{width:100%;border-collapse:collapse;font-size:15px}
+  .hours td{padding:6px 0;border-bottom:1px dashed #d5e5d2}
+  .hours tr:last-child td{border-bottom:none}
+  .hours td:last-child{text-align:right;font-weight:600}
+  .closed{color:#b03a2e;font-weight:700}
+  .addr{font-size:16px;line-height:1.6}
+  .btn-dir{background:var(--red);color:#fff;margin-top:14px;padding:12px 24px;font-size:15px}
+  .btn-fb{border:2px solid var(--red);color:var(--red);margin-top:12px;padding:10px 22px;font-size:14px}
+  .verify{color:#b3541e;font-size:13px;font-style:italic}
+  footer{margin-top:44px;background:#22302a;color:#bccabe;text-align:center;padding:30px 18px 96px;font-size:13px}
+  footer .fname{color:#fff;font-size:17px;font-weight:700}
+  footer a{color:var(--gold-soft)}
+  .callbar{position:fixed;left:0;right:0;bottom:0;background:var(--red-dark);padding:10px 14px;
+    display:flex;gap:10px;box-shadow:0 -4px 14px rgba(0,0,0,.25);z-index:10}
+  .callbar a{flex:1;text-align:center;border-radius:10px;padding:13px 6px;font-weight:700;font-size:15px}
+  .callbar .c1{background:var(--gold);color:#3a2403}
+  .callbar .c2{background:transparent;border:2px solid rgba(255,255,255,.7);color:#fff}
+  @media (min-width:560px){ h1{font-size:52px} .dishes{grid-template-columns:1fr 1fr 1fr} }
+</style>
+<style>html,body{overflow-x:hidden}.btn{max-width:94vw;box-sizing:border-box}@media (max-width:480px){.btn{padding-left:18px;padding-right:18px;font-size:16px}}</style>
+</head>
+<body>
+
+<div class="preview-bar">Sample Preview — Not the Official Website</div>
+
+<header>
+  <div class="hero-emoji">🥢</div>
+  <h1>Chopsticks</h1>
+  <div class="hero-sub">Chinese Restaurant · Edmonds, WA</div>
+  <p class="hero-pitch">Cantonese family favorites in Edmonds — special chow mein, family dinners and luncheon specials, proudly serving the neighborhood.</p>
+  <div class="stars">★★★★☆ <b>4.3</b> · 269 Google reviews</div>
+  <div class="hero-btns">
+    <a class="btn btn-call" href="tel:+14257761196">📞 Call to Order: (425) 776-1196</a>
+    <a class="btn btn-ghost" href="#visit">Hours &amp; Directions</a>
+  </div>
+</header>
+
+<div style="background:#22302a;color:#f3d492;text-align:center;font-size:14.5px;padding:11px 16px;line-height:1.5">🕦 <b>Luncheon specials served 11:30 AM – 3:00 PM</b> — call ahead for pickup, hot and ready when you arrive.</div>
+
+<div class="wrap">
+
+  <section id="favorites">
+    <h2>Customer Favorites<span class="rule"></span></h2>
+    <p class="section-note">The plates Edmonds families order again and again.</p>
+    <div class="dishes">
+      <div class="dish"><div class="ico">🍜</div><h3>Special Chow Mein</h3><p>Our house chow mein — the one that built our name.</p><span class="tag">SIGNATURE</span></div>
+      <div class="dish"><div class="ico">🥦</div><h3>Broccoli Beef</h3><p>Tender beef and fresh broccoli in a savory sauce.</p></div>
+      <div class="dish"><div class="ico">🍚</div><h3>Pork Fried Rice</h3><p>Wok-tossed the classic Cantonese way.</p></div>
+      <div class="dish"><div class="ico">🍱</div><h3>Family Dinners</h3><p>Generous combos made for the whole table.</p></div>
+      <div class="dish"><div class="ico">🕦</div><h3>Luncheon Specials</h3><p>Weekday lunch plates, 11:30 AM – 3:00 PM.</p></div>
+      <div class="dish"><div class="ico">🍽️</div><h3>Chopsticks Special Dinner</h3><p>Our special dinner set — a full taste of the house.</p></div>
+    </div>
+    <p class="section-note" style="margin-top:16px">Full menu available in store — call us for today's selection.</p>
+  </section>
+
+  <section id="reviews">
+    <div class="trust">
+      <div class="stars-lg">★★★★☆</div>
+      <div class="big">4.3 / 5</div>
+      <p>Rated by 269 customers on Google — a neighborhood staple on 100th Ave W, with a community of regulars on Facebook and beyond.</p>
+      <a class="btn btn-fb" href="https://www.google.com/maps/search/?api=1&query=Chopsticks+23025+100th+Ave+W+Edmonds+WA+98020" target="_blank" rel="noopener">Read Reviews on Google</a>
+    </div>
+  </section>
+
+  <section id="visit">
+    <h2>Visit Us<span class="rule"></span></h2>
+
+    <div class="info">
+      <h3>🕒 Hours</h3>
+      <table class="hours">
+        <tr><td>Monday</td><td class="closed">Closed</td></tr>
+        <tr><td>Tuesday</td><td>11:30 AM – 8:30 PM</td></tr>
+        <tr><td>Wednesday</td><td>11:30 AM – 8:30 PM</td></tr>
+        <tr><td>Thursday</td><td>11:30 AM – 8:30 PM</td></tr>
+        <tr><td>Friday</td><td>11:30 AM – 8:30 PM</td></tr>
+        <tr><td>Saturday</td><td>12:00 PM – 8:30 PM</td></tr>
+        <tr><td>Sunday</td><td>12:00 PM – 8:30 PM</td></tr>
+      </table>
+      <p class="verify" style="margin-top:10px">Holiday hours may vary — please call ahead.</p>
+    </div>
+
+    <div class="info">
+      <h3>📍 Find Us</h3>
+      <p class="addr">Chopsticks<br>23025 100th Ave W<br>Edmonds, WA 98020</p>
+      <a class="btn btn-dir" href="https://www.google.com/maps/dir/?api=1&destination=Chopsticks,+23025+100th+Ave+W,+Edmonds,+WA+98020" target="_blank" rel="noopener">🧭 Get Directions</a>
+    </div>
+
+    <div class="info" style="text-align:center">
+      <h3>🥡 Takeout</h3>
+      <p style="color:var(--muted);font-size:15px">Call ahead and your order will be hot and ready for pickup at the counter.</p>
+      <a class="btn btn-call" style="margin-top:14px" href="tel:+14257761196">📞 (425) 776-1196</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="fname">Chopsticks</div>
+  <p>23025 100th Ave W, Edmonds, WA 98020 · <a href="tel:+14257761196">(425) 776-1196</a></p>
+  <p style="margin-top:8px">Open Tuesday – Sunday · Closed Mondays</p>
+  <p style="margin-top:14px;opacity:.65">Sample website preview — prepared for demonstration purposes only.</p>
+</footer>
+
+<div class="callbar">
+  <a class="c1" href="tel:+14257761196">📞 Call to Order</a>
+  <a class="c2" href="https://www.google.com/maps/dir/?api=1&destination=Chopsticks,+23025+100th+Ave+W,+Edmonds,+WA+98020" target="_blank" rel="noopener">🧭 Directions</a>
+</div>
+
+</body>
+</html>
